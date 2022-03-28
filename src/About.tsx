@@ -30,23 +30,23 @@ export function About() {
         ]}
       />
       <p>
-        <b>W</b> and <b>O</b> aren't in the target word at all.
+        <b>t</b> and <b>i</b> aren't in the target word at all.
       </p>
       <p>
-        <b className={"green-bg"}>R</b> is correct! The third letter is{" "}
-        <b className={"green-bg"}>R</b>
+        <b className={"green-bg"}>n</b> is correct! The third letter is{" "}
+        <b className={"green-bg"}>n</b>
         .<br />
-        <strong>(There may still be a second R in the word.)</strong>
+        <strong>(There may still be a second n in the word.)</strong>
       </p>
       <p>
-        <b className={"yellow-bg"}>D</b> occurs <em>elsewhere</em> in the target
+        <b className={"yellow-bg"}>a</b> occurs <em>elsewhere</em> in the target
         word.
         <br />
         <strong>(Perhaps more than once. 🤔)</strong>
       </p>
       <hr />
       <p>
-        Let's move the <b>D</b> in our next guess:
+        Let's move the <b>a</b> in our next guess:
       </p>
       <Row
         rowState={RowState.LockedIn}
@@ -73,8 +73,7 @@ export function About() {
       <p>
         This game will be free and ad-free forever,
         <br />
-        but you can <a href="https://ko-fi.com/chordbug">buy me a coffee</a> if
-        you'd like.
+        its as priceless as punching Jesso in the face.
       </p>
     </div>
   );
