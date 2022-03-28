@@ -47,6 +47,12 @@ function randomTarget(wordLength: number): string {
   return candidate;
 }
 
+function jessleTarget(): string {
+  let jessle: string;
+  jessle = 'short';
+  return jessle;
+}
+
 function getChallengeUrl(target: string): string {
   return (
     window.location.origin +
@@ -87,15 +93,17 @@ function Game(props: GameProps) {
   const [guesses, setGuesses] = useState<string[]>([]);
   const [currentGuess, setCurrentGuess] = useState<string>("");
   const [challenge, setChallenge] = useState<string>(initChallenge);
+  const [jshot, setJessle] = useState<string>("short");
   const [wordLength, setWordLength] = useState(
     challenge ? challenge.length : parseUrlLength()
   );
   const [gameNumber, setGameNumber] = useState(parseUrlGameNumber());
   const [target, setTarget] = useState(() => {
     resetRng();
+    
     // Skip RNG ahead to the parsed initial game number:
     for (let i = 1; i < gameNumber; i++) randomTarget(wordLength);
-    return challenge || randomTarget(wordLength);
+    return jshot || randomTarget(wordLength);
   });
   const [hint, setHint] = useState<string>(
     challengeError
@@ -120,6 +128,7 @@ function Game(props: GameProps) {
       window.history.replaceState({}, document.title, window.location.pathname);
     }
     setChallenge("");
+    setJessle("");
     const newWordLength = limitLength(wordLength);
     setWordLength(newWordLength);
     setTarget(randomTarget(newWordLength));
@@ -261,29 +270,6 @@ function Game(props: GameProps) {
   return (
     <div className="Game" style={{ display: props.hidden ? "none" : "block" }}>
       <div className="Game-options">
-        <label htmlFor="wordLength">Letters:</label>
-        <input
-          type="range"
-          min={minLength}
-          max={maxLength}
-          id="wordLength"
-          disabled={
-            gameState === GameState.Playing &&
-            (guesses.length > 0 || currentGuess !== "" || challenge !== "")
-          }
-          value={wordLength}
-          onChange={(e) => {
-            const length = Number(e.target.value);
-            resetRng();
-            setGameNumber(1);
-            setGameState(GameState.Playing);
-            setGuesses([]);
-            setCurrentGuess("");
-            setTarget(randomTarget(length));
-            setWordLength(length);
-            setHint(`${length} letters`);
-          }}
-        ></input>
         <button
           style={{ flex: "0 0 auto" }}
           disabled={gameState !== GameState.Playing || guesses.length === 0}

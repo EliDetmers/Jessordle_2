@@ -23,10 +23,10 @@ export function About() {
         rowState={RowState.LockedIn}
         wordLength={4}
         cluedLetters={[
-          { clue: Clue.Absent, letter: "w" },
-          { clue: Clue.Absent, letter: "o" },
-          { clue: Clue.Correct, letter: "r" },
-          { clue: Clue.Elsewhere, letter: "d" },
+          { clue: Clue.Absent, letter: "t" },
+          { clue: Clue.Absent, letter: "i" },
+          { clue: Clue.Correct, letter: "n" },
+          { clue: Clue.Elsewhere, letter: "a" },
         ]}
       />
       <p>
@@ -52,10 +52,10 @@ export function About() {
         rowState={RowState.LockedIn}
         wordLength={4}
         cluedLetters={[
-          { clue: Clue.Correct, letter: "d" },
-          { clue: Clue.Correct, letter: "a" },
-          { clue: Clue.Correct, letter: "r" },
-          { clue: Clue.Absent, letter: "k" },
+          { clue: Clue.Correct, letter: "s" },
+          { clue: Clue.Absent, letter: "h" },
+          { clue: Clue.Correct, letter: "u" },
+          { clue: Clue.Correct, letter: "t" },
         ]}
         annotation={"So close!"}
       />
@@ -63,18 +63,13 @@ export function About() {
         rowState={RowState.LockedIn}
         wordLength={4}
         cluedLetters={[
-          { clue: Clue.Correct, letter: "d" },
-          { clue: Clue.Correct, letter: "a" },
-          { clue: Clue.Correct, letter: "r" },
+          { clue: Clue.Correct, letter: "s" },
+          { clue: Clue.Correct, letter: "l" },
+          { clue: Clue.Correct, letter: "u" },
           { clue: Clue.Correct, letter: "t" },
         ]}
         annotation={"Got it!"}
       />
-      <p>
-        Report issues{" "}
-        <a href="https://github.com/lynn/hello-wordl/issues">here</a>, or tweet{" "}
-        <a href="https://twitter.com/chordbug">@chordbug</a>.
-      </p>
       <p>
         This game will be free and ad-free forever,
         <br />

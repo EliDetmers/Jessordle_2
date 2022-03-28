@@ -78,9 +78,9 @@ function App() {
             fontStyle: difficulty > 1 ? "italic" : "inherit",
           }}
         >
-          hell
+          Jess
         </span>
-        o wordl
+        ordle
       </h1>
       <div className="top-right">
         {page !== "game" ? (
@@ -100,9 +100,7 @@ function App() {
           visibility: page === "game" ? "visible" : "hidden",
         }}
       >
-        <a href={seed ? "?random" : "?seed=" + todaySeed}>
-          {seed ? "Random" : "Today's"}
-        </a>
+        
       </div>
       {page === "about" && <About />}
       {page === "settings" && (
